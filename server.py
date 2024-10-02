@@ -77,6 +77,11 @@ def purchasePlaces():
     flash('Réservation effectuée avec succès !')
     return render_template('welcome.html', club=club, competitions=competitions, current_date=current_date)
 
+
+@app.route('/public')
+def publicClubPoints():
+    return render_template('public.html', clubs=clubs)
+    
 @app.route('/logout')
 def logout():
     return redirect(url_for('index'))
